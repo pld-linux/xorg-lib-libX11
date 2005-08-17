@@ -24,6 +24,7 @@ BuildRequires:	xorg-proto-xcmiscproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-lib-xtrans-devel
+Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/libX11-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -44,6 +45,7 @@ Requires:	xorg-lib-libX11 = %{version}-%{release}
 Requires:	xorg-proto-kbproto-devel
 Requires:	xorg-lib-libXau-devel
 Requires:	xorg-lib-libXdmcp-devel
+Obsoletes:	libX11-devel
 
 %description devel
 X11 Base library.
@@ -63,6 +65,7 @@ Summary:	Static libX11 libraries
 Summary(pl):	Biblioteki statyczne libX11
 Group:		Development/Libraries
 Requires:	xorg-lib-libX11-devel = %{version}-%{release}
+Obsoletes:	libX11-static
 
 %description static
 X11 Base library.
