@@ -25,9 +25,6 @@ BuildRequires:	xorg-util-util-macros
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
-
 %description
 X11 Base library.
 
