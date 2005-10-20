@@ -10,6 +10,7 @@ Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libX11-%{version}.
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+BuildRequires:	cpp
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-proto-bigreqsproto-devel
