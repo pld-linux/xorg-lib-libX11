@@ -1,12 +1,12 @@
 Summary:	X11 Base library
 Summary(pl):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
-Version:	0.99.2
+Version:	0.99.3
 Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	f7c5652798066e4221163b7aca4e3e64
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC2/lib/libX11-%{version}.tar.bz2
+# Source0-md5:	9974ce19858368c3addf87a193c80266
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -80,8 +80,7 @@ Pakiet zawiera statyczn± bibliotekê libX11.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure \
-	--enable-man-pages=3
+%configure
 
 %{__make}
 
@@ -90,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
+	libmandir=%{_mandir}/man3 \
 	pkgconfigdir=%{_pkgconfigdir}
 
 %clean
@@ -113,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libX11.la
 %{_includedir}/X11/*.h
 %{_pkgconfigdir}/x11.pc
-%{_mandir}/man3/*.3*
+%{_mandir}/man3/*.3x*
 
 %files static
 %defattr(644,root,root,755)
