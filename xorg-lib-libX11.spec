@@ -33,8 +33,8 @@ X11 Base library.
 Podstawowa biblioteka X11.
 
 %package devel
-Summary:	Header files libX11 development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libX11
+Summary:	Header files for libX11 library
+Summary(pl):	Pliki nag³ówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXau-devel
@@ -46,7 +46,7 @@ Obsoletes:	libX11-devel
 X11 Base library.
 
 This package contains the header files needed to develop programs that
-use these libX11.
+use libX11.
 
 %description devel -l pl
 Podstawowa biblioteka X11.
