@@ -2,7 +2,7 @@ Summary:	X11 Base library
 Summary(pl):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
 Version:	1.0.0
-Release:	0.1
+Release:	0.2
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/lib/libX11-%{version}.tar.bz2
@@ -102,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libX11.so.*.*.*
 %dir %{_libdir}/X11
+%dir %{_pixmapsdir}
 %{_libdir}/X11/Xcms.txt
 %{_libdir}/X11/locale
 %{_datadir}/X11
