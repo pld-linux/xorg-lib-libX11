@@ -1,12 +1,12 @@
 Summary:	X11 Base library
 Summary(pl):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
-Version:	1.0.1
+Version:	1.0.2
 Release:	0.1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	58f0537f21183e27149cf906a1b6bef9
+# Source0-md5:	86a16bdc09b42b2e018dd665c23ca21c
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -19,6 +19,7 @@ BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xcmiscproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.6
 BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-lib-libXau-devel
 BuildRequires:	xorg-lib-xtrans-devel
@@ -40,6 +41,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXau-devel
 Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-kbproto-devel
+Requires:	xorg-proto-xproto-devel >= 7.0.6
 Obsoletes:	libX11-devel
 
 %description devel
@@ -103,8 +105,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libX11.so.*.*.*
 %dir %{_libdir}/X11
 %{_libdir}/X11/Xcms.txt
-%{_libdir}/X11/locale
-%{_datadir}/X11
+%dir %{_datadir}/X11
+%{_datadir}/X11/XErrorDB
+%{_datadir}/X11/XKeysymDB
+%{_datadir}/X11/locale
 
 %files devel
 %defattr(644,root,root,755)
