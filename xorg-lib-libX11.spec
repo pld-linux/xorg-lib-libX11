@@ -2,11 +2,12 @@ Summary:	X11 Base library
 Summary(pl):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
 Version:	1.0.2
-Release:	0.1
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
 # Source0-md5:	86a16bdc09b42b2e018dd665c23ca21c
+Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -75,6 +76,7 @@ Pakiet zawiera statyczn± bibliotekê libX11.
 
 %prep
 %setup -q -n libX11-%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
