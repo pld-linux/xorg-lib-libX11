@@ -44,7 +44,7 @@ Summary:	Header files for libX11 library
 Summary(pl):	Pliki nag³ówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-%{?with_xcb:Requires:	libxcb-devel >= 0.9.92}
+%{?with_xcb:Requires:	libxcb-devel >= 1.0}
 Requires:	xorg-lib-libXau-devel
 Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-kbproto-devel
