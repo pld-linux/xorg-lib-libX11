@@ -3,7 +3,7 @@
 %bcond_without	xcb	# XCB for low-level protocol implementation
 #
 Summary:	X11 Base library
-Summary(pl.UTF-8):   Podstawowa biblioteka X11
+Summary(pl.UTF-8):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
 Version:	1.1.1
 Release:	2
@@ -41,7 +41,7 @@ Podstawowa biblioteka X11.
 
 %package devel
 Summary:	Header files for libX11 library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libX11
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 %{?with_xcb:Requires:	libxcb-devel >= 1.0}
@@ -65,7 +65,7 @@ używających biblioteki libX11.
 
 %package static
 Summary:	Static libX11 library
-Summary(pl.UTF-8):   Biblioteka statyczna libX11
+Summary(pl.UTF-8):	Biblioteka statyczna libX11
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libX11-static
