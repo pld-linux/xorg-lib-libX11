@@ -3,7 +3,7 @@
 %bcond_without	xcb	# XCB for low-level protocol implementation
 #
 Summary:	X11 Base library
-Summary(pl):	Podstawowa biblioteka X11
+Summary(pl.UTF-8):   Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
 Version:	1.1.1
 Release:	2
@@ -36,12 +36,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 X11 Base library.
 
-%description -l pl
+%description -l pl.UTF-8
 Podstawowa biblioteka X11.
 
 %package devel
 Summary:	Header files for libX11 library
-Summary(pl):	Pliki nag³ówkowe biblioteki libX11
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 %{?with_xcb:Requires:	libxcb-devel >= 1.0}
@@ -57,15 +57,15 @@ X11 Base library.
 This package contains the header files needed to develop programs that
 use libX11.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Podstawowa biblioteka X11.
 
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libX11.
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych biblioteki libX11.
 
 %package static
 Summary:	Static libX11 library
-Summary(pl):	Biblioteka statyczna libX11
+Summary(pl.UTF-8):   Biblioteka statyczna libX11
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libX11-static
@@ -75,10 +75,10 @@ X11 Base library.
 
 This package contains the static libX11 library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Podstawowa biblioteka X11.
 
-Pakiet zawiera statyczn± bibliotekê libX11.
+Pakiet zawiera statycznÄ… bibliotekÄ™ libX11.
 
 %prep
 %setup -q -n libX11-%{version}
