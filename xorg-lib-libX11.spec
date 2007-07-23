@@ -1,6 +1,7 @@
 #
 # Conditional build:
-%bcond_without	xcb	# XCB for low-level protocol implementation
+%bcond_without	static_libs	# don't build static library
+%bcond_without	xcb		# XCB for low-level protocol implementation
 #
 Summary:	X11 Base library
 Summary(pl.UTF-8):	Podstawowa biblioteka X11
@@ -93,6 +94,7 @@ Pakiet zawiera statyczną bibliotekę libX11.
 %{__autoheader}
 %{__automake}
 %configure \
+	%{!?with_static_libs:--disable-static} \
 	%{!?with_xcb:--without-xcb}
 
 %{__make}
@@ -138,9 +140,11 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 %{_mandir}/man3/*.3x*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libX11.a
 %if %{with xcb}
 %{_libdir}/libX11-xcb.a
+%endif
 %endif
