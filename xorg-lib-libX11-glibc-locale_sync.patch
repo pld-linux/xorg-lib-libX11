@@ -1083,8 +1083,8 @@
  en_US.UTF-8/Compose:		zh_TW.UTF-8
  en_US.UTF-8/Compose:		zu_ZA.UTF-8
 -en_US.UTF-8/Compose:		bs_BA.UTF-8
---- libX11-1.1.4/nls/locale.alias.pre.orig	2008-03-06 21:45:06.000000000 +0100
-+++ libX11-1.1.4/nls/locale.alias.pre	2008-03-07 23:24:28.773527964 +0100
+--- libX11-1.1.5/nls/locale.alias.pre.orig	2008-05-07 19:03:34.000000000 +0200
++++ libX11-1.1.5/nls/locale.alias.pre	2008-09-09 08:28:09.120985632 +0200
 @@ -17,17 +17,34 @@
  Cextend:					en_US.ISO8859-1
  Cextend.en:					en_US.ISO8859-1
@@ -2263,7 +2263,7 @@
  pt_PT@euro:					pt_PT.ISO8859-15
  pt_PT.utf8:					pt_PT.UTF-8
  pt_PT.UTF-8@euro:				pt_PT.UTF-8
-@@ -915,16 +1220,22 @@
+@@ -915,17 +1220,23 @@
  ro_RO:						ro_RO.ISO8859-2
  ro_RO.iso88592:					ro_RO.ISO8859-2
  ro_RO.ISO-8859-2:				ro_RO.ISO8859-2
@@ -2272,8 +2272,9 @@
 +ro_RO.ISO-8859-16:				ro_RO.ISO8859-16
 +ro_RO.ISO_8859-16:				ro_RO.ISO8859-16
  ro_RO.utf8:					ro_RO.UTF-8
- ru:						ru_RU.ISO8859-5
- ru_RU:						ru_RU.ISO8859-5
+ ru:						ru_RU.UTF-8
+ ru_RU:						ru_RU.UTF-8
+ ru_RU.utf8:					ru_RU.UTF-8
  ru_RU.iso88595:					ru_RU.ISO8859-5
  ru_RU.ISO-8859-5:				ru_RU.ISO8859-5
 +ru_RU.ISO_8859-5:				ru_RU.ISO8859-5
@@ -2286,7 +2287,7 @@
  #if defined(INCLUDE_ru_SU)
  XCOMM ru_SU is redundant now
  ru_SU:						ru_RU.KOI8-R
-@@ -937,10 +1248,12 @@
+@@ -938,10 +1249,12 @@
  ru_UA.microsoftcp1251:				ru_UA.CP1251
  ru_UA.microsoft-cp1251:				ru_UA.CP1251
  ru_UA.MICROSOFT-CP1251:				ru_UA.CP1251
@@ -2299,7 +2300,7 @@
  rw_RW.utf8:                 rw_RW.UTF-8
  se_NO:						se_NO.UTF-8
  se_NO.utf8:					se_NO.UTF-8
-@@ -954,25 +1267,52 @@
+@@ -955,25 +1268,52 @@
  sh_YU.utf8:					sr_CS.UTF-8
  si:						si_LK.UTF-8
  si_LK:						si_LK.UTF-8
@@ -2356,7 +2357,7 @@
  sq_AL.utf8:					sq_AL.UTF-8
  XCOMM SP is not an ISO 639 country code, but in Cyrillic, "R" looks like "P".
  XCOMM YU was the old ISO code for Yugoslavia (now CS for Serbia&Montenegro).
-@@ -982,8 +1322,10 @@
+@@ -983,8 +1323,10 @@
  sr_YU:						sr_CS.ISO8859-5
  sr_YU.iso88592:					sr_CS.ISO8859-2
  sr_YU.ISO-8859-2:				sr_CS.ISO8859-2
@@ -2367,7 +2368,7 @@
  sr@cyrillic:					sr_CS.ISO8859-5
  sr_YU@cyrillic:					sr_CS.ISO8859-5
  sr_YU.iso88595@cyrillic:			sr_CS.ISO8859-5
-@@ -996,32 +1338,50 @@
+@@ -997,32 +1339,50 @@
  sr_YU.MICROSOFT-CP1251@cyrillic:		sr_CS.CP1251
  sr_YU.utf8:					sr_CS.UTF-8
  sr_YU.UTF-8@cyrillic:				sr_CS.UTF-8
@@ -2418,7 +2419,7 @@
  sv_FI@euro:					sv_FI.ISO8859-15
  sv_FI.UTF-8@euro:				sv_FI.UTF-8
  sv_FI.utf8:					sv_FI.UTF-8
-@@ -1035,49 +1395,85 @@
+@@ -1036,49 +1396,85 @@
  sv_SE.ISO-8859-15:				sv_SE.ISO8859-15
  sv_SE@euro:					sv_SE.ISO8859-15
  sv_SE.utf8:					sv_SE.UTF-8
@@ -2514,7 +2515,7 @@
  uk_UA.koi8u:					uk_UA.KOI8-U
  uk_UA.cp1251:					uk_UA.CP1251
  uk_UA.microsoftcp1251:				uk_UA.CP1251
-@@ -1093,35 +1489,53 @@
+@@ -1094,35 +1490,53 @@
  ur_PK.microsoftcp1256:				ur_PK.CP1256
  ur_PK.microsoft-cp1256:				ur_PK.CP1256
  ur_PK.MICROSOFT-CP1256:				ur_PK.CP1256
@@ -2571,7 +2572,7 @@
  xh_ZA.utf8:					xh_ZA.UTF-8
  yi:						yi_US.CP1255
  yi_US:						yi_US.CP1255
-@@ -1129,6 +1543,7 @@
+@@ -1130,6 +1544,7 @@
  yi_US.microsoftcp1255:				yi_US.CP1255
  yi_US.microsoft-cp1255:				yi_US.CP1255
  yi_US.MICROSOFT-CP1255:				yi_US.CP1255
@@ -2579,7 +2580,7 @@
  zh_CN:						zh_CN.gb2312
  zh_CN.Big5:					zh_TW.big5
  zh_CN.EUC:					zh_CN.eucCN
-@@ -1140,8 +1555,10 @@
+@@ -1141,8 +1556,10 @@
  zh_CN.utf8:					zh_CN.UTF-8
  ZH_CN.UTF-8:					zh_CN.UTF-8
  zh_HK:						zh_HK.big5hkscs
@@ -2590,7 +2591,7 @@
  zh_HK.Big5_hkscs:				zh_HK.big5hkscs
  zh_HK.Big5HKSCS:				zh_HK.big5hkscs
  zh_HK.BIG5-HKSCS:				zh_HK.big5hkscs
-@@ -1149,6 +1566,10 @@
+@@ -1150,6 +1567,10 @@
  zh_HK.Big5:					zh_HK.big5
  zh_HK.utf8:					zh_HK.UTF-8
  ZH_HK.UTF-8:					zh_HK.UTF-8
@@ -2601,7 +2602,7 @@
  ZH_SG.UTF-8:					zh_SG.UTF-8
  zh_TW:						zh_TW.big5
  zh_TW.Big5:					zh_TW.big5
-@@ -1158,9 +1579,11 @@
+@@ -1159,9 +1580,11 @@
  zh_TW.EUC-TW:					zh_TW.eucTW
  zh_TW.utf8:					zh_TW.UTF-8
  ZH_TW.UTF-8:					zh_TW.UTF-8
