@@ -6,19 +6,19 @@
 Summary:	X11 Base library
 Summary(pl.UTF-8):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
-Version:	1.1.99.2
-Release:	2
+Version:	1.2
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	2450f861d39939e46f8a4ced1abc3504
+# Source0-md5:	c6265b59ea2b594fd68e33f9125b4d20
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	cpp
 BuildRequires:	libtool
-%{?with_xcb:BuildRequires:	libxcb-devel >= 1.1.92}
+%{?with_xcb:BuildRequires:	libxcb-devel >= 1.2}
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-proto-bigreqsproto-devel
 BuildRequires:	xorg-proto-inputproto-devel
@@ -31,7 +31,7 @@ BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-lib-libXau-devel
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-util-util-macros >= 1.1.0
-%{?with_xcb:Requires:	libxcb >= 1.1.92}
+%{?with_xcb:Requires:	libxcb >= 1.2}
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,7 +46,7 @@ Summary:	Header files for libX11 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-%{?with_xcb:Requires:	libxcb-devel >= 1.1.92}
+%{?with_xcb:Requires:	libxcb-devel >= 1.2}
 Requires:	xorg-lib-libXau-devel
 Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-kbproto-devel
