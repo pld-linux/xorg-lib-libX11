@@ -1,0 +1,2 @@
+- up to 1.1; enable xcb
+  [fixes CVE-2006-5397]
