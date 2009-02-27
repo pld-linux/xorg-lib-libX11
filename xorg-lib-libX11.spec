@@ -7,7 +7,7 @@ Summary:	X11 Base library
 Summary(pl.UTF-8):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
 Version:	1.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
@@ -20,6 +20,9 @@ BuildRequires:	cpp
 BuildRequires:	libtool
 %{?with_xcb:BuildRequires:	libxcb-devel >= 1.2}
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	xorg-lib-libXau-devel
+BuildRequires:	xorg-lib-libXdmcp-devel
+BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-bigreqsproto-devel
 BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
@@ -27,9 +30,6 @@ BuildRequires:	xorg-proto-xcmiscproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.6
-BuildRequires:	xorg-lib-libXdmcp-devel
-BuildRequires:	xorg-lib-libXau-devel
-BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-util-util-macros >= 1.1.0
 %{?with_xcb:Requires:	libxcb >= 1.2}
 Obsoletes:	libX11
@@ -104,12 +104,20 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
-	
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
+
+%pretrans
+# this needs to be a dir
+if [ -f -L %{_libdir}/X11 ]; then
+	umask 022
+	mv -f %{_libdir}/X11{,.rpmsave}
+	mkdir %{_libdir}/X11
+fi
 
 %files
 %defattr(644,root,root,755)
