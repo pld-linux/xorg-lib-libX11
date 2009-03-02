@@ -7,7 +7,7 @@ Summary:	X11 Base library
 Summary(pl.UTF-8):	Podstawowa biblioteka X11
 Name:		xorg-lib-libX11
 Version:	1.2
-Release:	2
+Release:	3
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
@@ -113,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %pretrans
 # this needs to be a dir
-if [ -f -L %{_libdir}/X11 ]; then
+if [ -L %{_libdir}/X11 ]; then
 	umask 022
 	mv -f %{_libdir}/X11{,.rpmsave}
 	mkdir %{_libdir}/X11
