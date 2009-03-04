@@ -29,7 +29,7 @@ BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xcmiscproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
-BuildRequires:	xorg-proto-xproto-devel >= 7.0.6
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.13
 BuildRequires:	xorg-util-util-macros >= 1.1.0
 %{?with_xcb:Requires:	libxcb >= 1.2}
 Obsoletes:	libX11
@@ -50,7 +50,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXau-devel
 Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-kbproto-devel
-Requires:	xorg-proto-xproto-devel >= 7.0.6
+Requires:	xorg-proto-xproto-devel >= 7.0.13
 Obsoletes:	libX11-devel
 
 %description devel
