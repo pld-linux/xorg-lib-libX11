@@ -134,7 +134,73 @@ fi
 %dir %{_datadir}/X11
 %{_datadir}/X11/XErrorDB
 %{_datadir}/X11/XKeysymDB
-%{_datadir}/X11/locale
+%dir %{_datadir}/X11/locale
+%{_datadir}/X11/locale/compose.dir
+%{_datadir}/X11/locale/locale.alias
+%{_datadir}/X11/locale/locale.dir
+%{_datadir}/X11/locale/C
+%{_datadir}/X11/locale/en_US.UTF-8
+
+# encodings, not really lang taggable
+%{_datadir}/X11/locale/armscii-8
+%{_datadir}/X11/locale/georgian-academy
+%{_datadir}/X11/locale/georgian-ps
+%{_datadir}/X11/locale/ibm-cp1133
+%{_datadir}/X11/locale/iscii-dev
+%{_datadir}/X11/locale/isiri-3342
+%{_datadir}/X11/locale/iso8859-1
+%{_datadir}/X11/locale/iso8859-10
+%{_datadir}/X11/locale/iso8859-11
+%{_datadir}/X11/locale/iso8859-13
+%{_datadir}/X11/locale/iso8859-14
+%{_datadir}/X11/locale/iso8859-15
+%{_datadir}/X11/locale/iso8859-2
+%{_datadir}/X11/locale/iso8859-3
+%{_datadir}/X11/locale/iso8859-4
+%{_datadir}/X11/locale/iso8859-5
+%{_datadir}/X11/locale/iso8859-6
+%{_datadir}/X11/locale/iso8859-7
+%{_datadir}/X11/locale/iso8859-8
+%{_datadir}/X11/locale/iso8859-9
+%{_datadir}/X11/locale/iso8859-9e
+%{_datadir}/X11/locale/koi8-c
+%{_datadir}/X11/locale/koi8-r
+%{_datadir}/X11/locale/koi8-u
+%{_datadir}/X11/locale/microsoft-cp1251
+%{_datadir}/X11/locale/microsoft-cp1255
+%{_datadir}/X11/locale/microsoft-cp1256
+%{_datadir}/X11/locale/mulelao-1
+%{_datadir}/X11/locale/nokhchi-1
+%{_datadir}/X11/locale/tatar-cyr
+%{_datadir}/X11/locale/tscii-0
+
+%lang(am) %{_datadir}/X11/locale/am_ET.UTF-8
+%lang(el) %{_datadir}/X11/locale/el_GR.UTF-8
+%lang(fi) %{_datadir}/X11/locale/fi_FI.UTF-8
+%lang(ja) %{_datadir}/X11/locale/ja
+%lang(ja) %{_datadir}/X11/locale/ja.JIS
+%lang(ja) %{_datadir}/X11/locale/ja.S90
+%lang(ja) %{_datadir}/X11/locale/ja.SJIS
+%lang(ja) %{_datadir}/X11/locale/ja.U90
+%lang(ja) %{_datadir}/X11/locale/ja_JP.UTF-8
+%lang(ko) %{_datadir}/X11/locale/ko
+%lang(ko) %{_datadir}/X11/locale/ko_KR.UTF-8
+%lang(pt_BR) %{_datadir}/X11/locale/pt_BR.UTF-8
+%lang(ru) %{_datadir}/X11/locale/ru_RU.UTF-8
+%lang(th) %{_datadir}/X11/locale/th_TH
+%lang(th) %{_datadir}/X11/locale/th_TH.UTF-8
+%lang(vi) %{_datadir}/X11/locale/vi_VN.tcvn
+%lang(vi) %{_datadir}/X11/locale/vi_VN.viscii
+%lang(zh_CN) %{_datadir}/X11/locale/zh_CN
+%lang(zh_CN) %{_datadir}/X11/locale/zh_CN.UTF-8
+%lang(zh_CN) %{_datadir}/X11/locale/zh_CN.gb18030
+%lang(zh_CN) %{_datadir}/X11/locale/zh_CN.gbk
+%lang(zh_HK) %{_datadir}/X11/locale/zh_HK.UTF-8
+%lang(zh_HK) %{_datadir}/X11/locale/zh_HK.big5
+%lang(zh_HK) %{_datadir}/X11/locale/zh_HK.big5hkscs
+%lang(zh_TW) %{_datadir}/X11/locale/zh_TW
+%lang(zh_TW) %{_datadir}/X11/locale/zh_TW.UTF-8
+%lang(zh_TW) %{_datadir}/X11/locale/zh_TW.big5
 
 %files devel
 %defattr(644,root,root,755)
