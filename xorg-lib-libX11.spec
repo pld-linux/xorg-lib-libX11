@@ -3,8 +3,8 @@
 %bcond_without	static_libs	# don't build static library
 %bcond_without	xcb		# XCB for low-level protocol implementation
 #
-Summary:	X11 Base library
-Summary(pl.UTF-8):	Podstawowa biblioteka X11
+Summary:	Core X11 protocol client library
+Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
 Version:	1.3
 Release:	1
@@ -15,53 +15,59 @@ Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.t
 # how this patch is being made?
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
 BuildRequires:	libtool
-%{?with_xcb:BuildRequires:	libxcb-devel >= 1.2}
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	xorg-lib-libXau-devel
-BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-lib-xtrans-devel
-BuildRequires:	xorg-proto-bigreqsproto-devel
 BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
-BuildRequires:	xorg-proto-xcmiscproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.13
-BuildRequires:	xorg-util-util-macros >= 1.1.0
+BuildRequires:	xorg-util-util-macros >= 1.3
+%if %{with xcb}
+BuildRequires:	libxcb-devel >= 1.2
+%else
+BuildRequires:	xorg-lib-libXau-devel
+BuildRequires:	xorg-lib-libXdmcp-devel
+BuildRequires:	xorg-proto-bigreqsproto-devel
+BuildRequires:	xorg-proto-xcmiscproto-devel
+%endif
 %{?with_xcb:Requires:	libxcb >= 1.2}
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-X11 Base library.
+Core X11 protocol client library.
 
 %description -l pl.UTF-8
-Podstawowa biblioteka X11.
+Podstawowa biblioteka kliencka protokołu X11.
 
 %package devel
 Summary:	Header files for libX11 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-%{?with_xcb:Requires:	libxcb-devel >= 1.2}
-Requires:	xorg-lib-libXau-devel
-Requires:	xorg-lib-libXdmcp-devel
 Requires:	xorg-proto-kbproto-devel
 Requires:	xorg-proto-xproto-devel >= 7.0.13
+%if %{with xcb}
+Requires:	libxcb-devel >= 1.2
+%else
+Requires:	xorg-lib-libXau-devel
+Requires:	xorg-lib-libXdmcp-devel
+%endif
 Obsoletes:	libX11-devel
 
 %description devel
-X11 Base library.
+Core X11 protocol client library.
 
 This package contains the header files needed to develop programs that
 use libX11.
 
 %description devel -l pl.UTF-8
-Podstawowa biblioteka X11.
+Podstawowa biblioteka kliencka protokołu X11.
 
 Pakiet zawiera pliki nagłówkowe niezbędne do kompilowania programów
 używających biblioteki libX11.
@@ -74,12 +80,12 @@ Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libX11-static
 
 %description static
-X11 Base library.
+Core X11 protocol client library.
 
 This package contains the static libX11 library.
 
 %description static -l pl.UTF-8
-Podstawowa biblioteka X11.
+Podstawowa biblioteka kliencka protokołu X11.
 
 Pakiet zawiera statyczną bibliotekę libX11.
 
@@ -206,12 +212,14 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libX11.so
 %{_libdir}/libX11.la
-%{_includedir}/X11/*.h
+%{_includedir}/X11/ImUtil.h
+%{_includedir}/X11/X*.h
+%{_includedir}/X11/cursorfont.h
 %{_pkgconfigdir}/x11.pc
 %if %{with xcb}
 %attr(755,root,root) %{_libdir}/libX11-xcb.so
 %{_libdir}/libX11-xcb.la
-#%{_includedir}/X11/Xlib-xcb.h (already included in *.h above)
+#%{_includedir}/X11/Xlib-xcb.h (already included in X*.h above)
 %{_pkgconfigdir}/x11-xcb.pc
 %endif
 %{_mandir}/man3/*.3x*
