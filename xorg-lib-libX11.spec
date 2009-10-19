@@ -18,6 +18,9 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
+# ps2pdf
+BuildRequires:	ghostscript
+BuildRequires:	groff
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-xtrans-devel
@@ -111,6 +114,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
+
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libX11
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -212,6 +217,8 @@ fi
 
 %files devel
 %defattr(644,root,root,755)
+# PDF chosen - docs include pictures
+%doc specs/XIM/xim.pdf specs/i18n/{Framework,LocaleDB,Trans}.pdf specs/libX11/libX11.pdf
 %attr(755,root,root) %{_libdir}/libX11.so
 %{_libdir}/libX11.la
 %{_includedir}/X11/ImUtil.h
