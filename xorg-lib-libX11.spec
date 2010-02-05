@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 %bcond_without	xcb		# XCB for low-level protocol implementation
-%bcond_without	docs		# don't package devel docs (allows bootstrapping)
+%bcond_without	doc		# don't package devel docs (allows bootstrapping)
 #
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
@@ -19,7 +19,7 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
-%if %{with docs}
+%if %{with doc}
 # ps2pdf
 BuildRequires:	ghostscript
 BuildRequires:	groff
@@ -222,7 +222,7 @@ fi
 %files devel
 %defattr(644,root,root,755)
 # PDF chosen - docs include pictures
-%{?with_docs:%doc specs/XIM/xim.pdf specs/i18n/{Framework,LocaleDB,Trans}.pdf specs/libX11/libX11.pdf}
+%{?with_doc:%doc specs/XIM/xim.pdf specs/i18n/{Framework,LocaleDB,Trans}.pdf specs/libX11/libX11.pdf}
 %attr(755,root,root) %{_libdir}/libX11.so
 %{_libdir}/libX11.la
 %{_includedir}/X11/ImUtil.h
