@@ -32,7 +32,7 @@ BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.13
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-util-util-macros >= 1.6
 %if %{with xcb}
 BuildRequires:	libxcb-devel >= 1.2
 %else
