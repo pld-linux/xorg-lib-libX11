@@ -7,12 +7,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.3.5
+Version:	1.3.6
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	a1175b6667fcb249c6f1d725965944e3
+# Source0-md5:	8e0a8a466aa78f66e09fe06cb395319f
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
@@ -147,7 +147,6 @@ fi
 %{_libdir}/X11/Xcms.txt
 %dir %{_datadir}/X11
 %{_datadir}/X11/XErrorDB
-%{_datadir}/X11/XKeysymDB
 %dir %{_datadir}/X11/locale
 %{_datadir}/X11/locale/compose.dir
 %{_datadir}/X11/locale/locale.alias

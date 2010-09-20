@@ -1702,11 +1702,10 @@
  nb:						nb_NO.ISO8859-1
  nb_NO:						nb_NO.ISO8859-1
  nb_NO.88591:					nb_NO.ISO8859-1
-@@ -824,6 +953,20 @@
- nb_NO.ISO-8859-1:				nb_NO.ISO8859-1
+@@ -824,6 +953,19 @@
  nb_NO.iso885915:				nb_NO.ISO8859-15
  nb_NO.ISO-8859-15:				nb_NO.ISO8859-15
-+nb_NO.utf8:					nb_NO.UTF-8
+ nb_NO.utf8:					nb_NO.UTF-8
 +nds:						nds_DE.ISO8859-1
 +nds_DE:						nds_DE.ISO8859-1
 +nds_DE.iso88591:				nds_DE.ISO8859-1
@@ -1723,7 +1722,7 @@
  ne_NP.utf8:					ne_NP.UTF-8
  ne_NP.UTF-8:					ne_NP.UTF-8
  nl:						nl_NL.ISO8859-1
-@@ -835,8 +978,9 @@
+@@ -835,8 +977,9 @@
  nl_BE.ISO-8859-1:				nl_BE.ISO8859-1
  nl_BE.ISO_8859-1:				nl_BE.ISO8859-1
  nl_BE.iso885915:				nl_BE.ISO8859-15
@@ -1734,7 +1733,7 @@
  nl_BE@euro:					nl_BE.ISO8859-15
  nl_BE.utf8:					nl_BE.UTF-8
  nl_BE.UTF-8@euro:				nl_BE.UTF-8
-@@ -844,11 +988,12 @@
+@@ -844,11 +987,12 @@
  nl_NL.88591:					nl_NL.ISO8859-1
  nl_NL.88591.en:					nl_NL.ISO8859-1
  nl_NL.iso88591:					nl_NL.ISO8859-1
@@ -1748,10 +1747,10 @@
  nl_NL@euro:					nl_NL.ISO8859-15
  nl_NL.utf8:					nl_NL.UTF-8
  nl_NL.UTF-8@euro:				nl_NL.UTF-8
-@@ -859,31 +1004,35 @@
- nn_NO.ISO_8859-1:				nn_NO.ISO8859-1
+@@ -859,31 +1003,35 @@
  nn_NO.iso885915:				nn_NO.ISO8859-15
  nn_NO.ISO-8859-15:				nn_NO.ISO8859-15
+ nn_NO.utf8:					nn_NO.UTF-8
 -no:						no_NO.ISO8859-1
 -no_NO:						no_NO.ISO8859-1
 -no_NO.88591:					no_NO.ISO8859-1
@@ -1803,7 +1802,7 @@
  nynorsk:					nn_NO.ISO8859-1
  oc:						oc_FR.ISO8859-1
  oc_FR:						oc_FR.ISO8859-1
-@@ -891,14 +1040,31 @@
+@@ -891,14 +1039,31 @@
  oc_FR.ISO-8859-1:				oc_FR.ISO8859-1
  oc_FR.iso885915:				oc_FR.ISO8859-15
  oc_FR.ISO-8859-15:				oc_FR.ISO8859-15
@@ -1837,7 +1836,7 @@
  pd:						pd_US.ISO8859-1
  pd_DE:						pd_DE.ISO8859-1
  pd_US:						pd_US.ISO8859-1
-@@ -906,18 +1072,22 @@
+@@ -906,18 +1071,22 @@
  pd_US.iso88591:					pd_US.ISO8859-1
  pd_DE.iso885915:				pd_DE.ISO8859-15
  pd_US.iso885915:				pd_US.ISO8859-15
@@ -1866,7 +1865,7 @@
  pt:						pt_PT.ISO8859-1
  pt.ISO8859-15:					pt_PT.ISO8859-15
  pt_BR:						pt_BR.ISO8859-1
-@@ -926,7 +1096,6 @@
+@@ -926,7 +1095,6 @@
  pt_BR.iso88591:					pt_BR.ISO8859-1
  pt_BR.ISO-8859-1:				pt_BR.ISO8859-1
  pt_BR.ISO_8859-1:				pt_BR.ISO8859-1
@@ -1874,7 +1873,7 @@
  pt_BR.utf8:					pt_BR.UTF-8
  pt_PT:						pt_PT.ISO8859-1
  pt_PT.88591:					pt_PT.ISO8859-1
-@@ -935,8 +1104,9 @@
+@@ -935,8 +1103,9 @@
  pt_PT.ISO-8859-1:				pt_PT.ISO8859-1
  pt_PT.ISO_8859-1:				pt_PT.ISO8859-1
  pt_PT.iso885915:				pt_PT.ISO8859-15
@@ -1885,7 +1884,7 @@
  pt_PT@euro:					pt_PT.ISO8859-15
  pt_PT.utf8:					pt_PT.UTF-8
  pt_PT.UTF-8@euro:				pt_PT.UTF-8
-@@ -944,6 +1114,8 @@
+@@ -944,6 +1113,8 @@
  ro_RO:						ro_RO.ISO8859-2
  ro_RO.iso88592:					ro_RO.ISO8859-2
  ro_RO.ISO-8859-2:				ro_RO.ISO8859-2
@@ -1894,7 +1893,7 @@
  ro_RO.utf8:					ro_RO.UTF-8
  ru:						ru_RU.UTF-8
  ru.koi8-r:					ru_RU.KOI8-R
-@@ -969,10 +1141,12 @@
+@@ -969,10 +1140,12 @@
  ru_UA.microsoftcp1251:				ru_UA.CP1251
  ru_UA.microsoft-cp1251:				ru_UA.CP1251
  ru_UA.MICROSOFT-CP1251:				ru_UA.CP1251
@@ -1907,7 +1906,7 @@
  rw_RW.utf8:                 rw_RW.UTF-8
  sd:						sd_IN.UTF-8
  sd_IN.utf8:					sd_IN.UTF-8
-@@ -992,6 +1166,10 @@
+@@ -992,6 +1165,10 @@
  sh_YU.utf8:					sr_RS.UTF-8@latin
  si:						si_LK.UTF-8
  si_LK:						si_LK.UTF-8
@@ -1918,7 +1917,7 @@
  sk:						sk_SK.ISO8859-2
  sk_SK:						sk_SK.ISO8859-2
  sk_SK.iso88592:					sk_SK.ISO8859-2
-@@ -1001,11 +1179,27 @@
+@@ -1001,11 +1178,27 @@
  sl_SI:						sl_SI.ISO8859-2
  sl_SI.iso88592:					sl_SI.ISO8859-2
  sl_SI.ISO-8859-2:				sl_SI.ISO8859-2
@@ -1950,7 +1949,7 @@
  sq_AL.utf8:					sq_AL.UTF-8
  XCOMM YU was the old ISO code for Yugoslavia (later CS for Serbia&Montenegro).
  XCOMM CS was the old ISO code for Serbia&Montenegro (now separate RS and ME).
-@@ -1029,13 +1223,17 @@
+@@ -1029,13 +1222,17 @@
  sr_RS.utf8:					sr_RS.UTF-8
  sr_ME:						sr_ME.UTF-8
  sr_ME.utf8:					sr_ME.UTF-8
@@ -1968,7 +1967,7 @@
  st_ZA.utf8:					st_ZA.UTF-8
  sv:						sv_SE.ISO8859-1
  sv.ISO8859-15:					sv_SE.ISO8859-15
-@@ -1045,6 +1243,7 @@
+@@ -1045,6 +1242,7 @@
  sv_FI.ISO-8859-1:				sv_FI.ISO8859-1
  sv_FI.iso885915:				sv_FI.ISO8859-15
  sv_FI.ISO-8859-15:				sv_FI.ISO8859-15
@@ -1976,7 +1975,7 @@
  sv_FI.ISO-8859-15@euro:				sv_FI.ISO8859-15
  sv_FI@euro:					sv_FI.ISO8859-15
  sv_FI.UTF-8@euro:				sv_FI.UTF-8
-@@ -1059,32 +1258,56 @@
+@@ -1059,32 +1257,56 @@
  sv_SE.ISO-8859-15:				sv_SE.ISO8859-15
  sv_SE@euro:					sv_SE.ISO8859-15
  sv_SE.utf8:					sv_SE.UTF-8
@@ -2042,7 +2041,7 @@
  tr_TR:						tr_TR.ISO8859-9
  TR_TR:						tr_TR.ISO8859-9
  tr_TR.iso88599:					tr_TR.ISO8859-9
-@@ -1094,14 +1317,18 @@
+@@ -1094,14 +1316,18 @@
  ts:							ts_ZA.ISO8859-1
  ts_ZA:						ts_ZA.ISO8859-1
  ts_ZA.iso88591:				ts_ZA.ISO8859-1
@@ -2062,7 +2061,7 @@
  uk_UA.koi8u:					uk_UA.KOI8-U
  uk_UA.cp1251:					uk_UA.CP1251
  uk_UA.microsoftcp1251:				uk_UA.CP1251
-@@ -1117,23 +1344,33 @@
+@@ -1117,23 +1343,33 @@
  ur_PK.microsoftcp1256:				ur_PK.CP1256
  ur_PK.microsoft-cp1256:				ur_PK.CP1256
  ur_PK.MICROSOFT-CP1256:				ur_PK.CP1256
@@ -2099,7 +2098,7 @@
  VI_VN.UTF-8:					vi_VN.UTF-8
  wa:						wa_BE.ISO8859-1
  wa_BE:						wa_BE.ISO8859-1
-@@ -1141,11 +1378,14 @@
+@@ -1141,11 +1377,14 @@
  wa_BE.ISO-8859-1:				wa_BE.ISO8859-1
  wa_BE.iso885915:				wa_BE.ISO8859-15
  wa_BE.ISO-8859-15:				wa_BE.ISO8859-15
@@ -2114,7 +2113,7 @@
  xh_ZA.utf8:					xh_ZA.UTF-8
  yi:						yi_US.CP1255
  yi_US:						yi_US.CP1255
-@@ -1153,6 +1393,7 @@
+@@ -1153,6 +1392,7 @@
  yi_US.microsoftcp1255:				yi_US.CP1255
  yi_US.microsoft-cp1255:				yi_US.CP1255
  yi_US.MICROSOFT-CP1255:				yi_US.CP1255
@@ -2122,7 +2121,7 @@
  zh_CN:						zh_CN.gb2312
  zh_CN.Big5:					zh_TW.big5
  zh_CN.EUC:					zh_CN.eucCN
-@@ -1165,8 +1406,10 @@
+@@ -1165,8 +1405,10 @@
  ZH_CN.UTF-8:					zh_CN.UTF-8
  zh_HK:						zh_HK.big5hkscs
  zh_HK.BIG5HK:					zh_HK.big5hkscs
@@ -2133,7 +2132,7 @@
  zh_HK.Big5_hkscs:				zh_HK.big5hkscs
  zh_HK.Big5HKSCS:				zh_HK.big5hkscs
  zh_HK.BIG5-HKSCS:				zh_HK.big5hkscs
-@@ -1174,6 +1417,10 @@
+@@ -1174,6 +1416,10 @@
  zh_HK.Big5:					zh_HK.big5
  zh_HK.utf8:					zh_HK.UTF-8
  ZH_HK.UTF-8:					zh_HK.UTF-8
@@ -2144,7 +2143,7 @@
  ZH_SG.UTF-8:					zh_SG.UTF-8
  zh_TW:						zh_TW.big5
  zh_TW.Big5:					zh_TW.big5
-@@ -1183,9 +1430,11 @@
+@@ -1183,9 +1429,11 @@
  zh_TW.EUC-TW:					zh_TW.eucTW
  zh_TW.utf8:					zh_TW.UTF-8
  ZH_TW.UTF-8:					zh_TW.UTF-8
