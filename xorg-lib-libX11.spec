@@ -8,7 +8,7 @@ Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
 Version:	1.3.6
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
@@ -41,8 +41,7 @@ BuildRequires:	xorg-lib-libXdmcp-devel
 BuildRequires:	xorg-proto-bigreqsproto-devel
 BuildRequires:	xorg-proto-xcmiscproto-devel
 %endif
-%{?with_xcb:Requires:	libxcb >= 1.2}
-Obsoletes:	libX11
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -50,6 +49,20 @@ Core X11 protocol client library.
 
 %description -l pl.UTF-8
 Podstawowa biblioteka kliencka protokołu X11.
+
+%package libs
+Summary:	libX11 library itself
+Summary(pl.UTF-8):	Sama biblioteka libX11
+Group:		Libraries
+Requires(post,postun):	/sbin/ldconfig
+%{?with_xcb:Requires:	libxcb >= 1.2}
+Obsoletes:	libX11
+
+%description libs
+libX11 library itself.
+
+%description libs -l pl.UTF-8
+Sama biblioteka libX11.
 
 %package devel
 Summary:	Header files for libX11 library
@@ -123,10 +136,10 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
-%pretrans
+%pretrans libs
 # this needs to be a dir
 if [ -L %{_libdir}/X11 ]; then
 	umask 022
@@ -137,14 +150,6 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog README
-%attr(755,root,root) %{_libdir}/libX11.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libX11.so.6
-%if %{with xcb}
-%attr(755,root,root) %{_libdir}/libX11-xcb.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libX11-xcb.so.1
-%endif
-%dir %{_libdir}/X11
-%{_libdir}/X11/Xcms.txt
 %dir %{_datadir}/X11
 %{_datadir}/X11/XErrorDB
 %dir %{_datadir}/X11/locale
@@ -217,6 +222,17 @@ fi
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW.UTF-8
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW.big5
 %{_mandir}/man5/*Compose.5x*
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libX11.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libX11.so.6
+%if %{with xcb}
+%attr(755,root,root) %{_libdir}/libX11-xcb.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libX11-xcb.so.1
+%endif
+%dir %{_libdir}/X11
+%{_libdir}/X11/Xcms.txt
 
 %files devel
 %defattr(644,root,root,755)
