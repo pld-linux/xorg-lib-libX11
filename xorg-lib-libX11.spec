@@ -1,7 +1,6 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
-%bcond_without	doc		# don't package devel docs (allows bootstrapping)
 #
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
@@ -18,21 +17,18 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
-%if %{with doc}
-# ps2pdf
-BuildRequires:	ghostscript
-BuildRequires:	groff
-%endif
 BuildRequires:	libtool
+BuildRequires:	libxcb-devel >= 1.2
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	xmlto >= 0.0.20
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.13
-BuildRequires:	xorg-util-util-macros >= 1.6
-BuildRequires:	libxcb-devel >= 1.2
+BuildRequires:	xorg-sgml-doctools >= 1.5
+BuildRequires:	xorg-util-util-macros >= 1.11
 Requires:	libxcb >= 1.2
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -101,8 +97,7 @@ Pakiet zawiera statyczną bibliotekę libX11.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libX11
 
@@ -113,7 +108,6 @@ for dir in XIM i18n/framework i18n/localedb i18n/trans libX11; do
 	cp -a $dir/*.svg rpm-doc/$dir || :
 	sed -i -e "s#$RPM_BUILD_ROOT##g" rpm-doc/$dir/*.html
 done
-	
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -213,17 +207,15 @@ fi
 
 %files devel
 %defattr(644,root,root,755)
-# PDF chosen - docs include pictures
-%{?with_doc:%doc specs/rpm-doc/*}
+%doc specs/rpm-doc/*
 %attr(755,root,root) %{_libdir}/libX11.so
+%attr(755,root,root) %{_libdir}/libX11-xcb.so
 %{_libdir}/libX11.la
+%{_libdir}/libX11-xcb.la
 %{_includedir}/X11/ImUtil.h
 %{_includedir}/X11/X*.h
 %{_includedir}/X11/cursorfont.h
 %{_pkgconfigdir}/x11.pc
-%attr(755,root,root) %{_libdir}/libX11-xcb.so
-%{_libdir}/libX11-xcb.la
-#%{_includedir}/X11/Xlib-xcb.h (already included in X*.h above)
 %{_pkgconfigdir}/x11-xcb.pc
 %{_mandir}/man3/*.3x*
 
