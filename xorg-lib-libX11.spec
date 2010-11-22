@@ -1,18 +1,17 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
-%bcond_without	xcb		# XCB for low-level protocol implementation
 %bcond_without	doc		# don't package devel docs (allows bootstrapping)
 #
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.3.6
-Release:	3
+Version:	1.4.0
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	8e0a8a466aa78f66e09fe06cb395319f
+# Source0-md5:	b63d9f7493a61df51d0c0be04ac435e4
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
@@ -33,15 +32,8 @@ BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.13
 BuildRequires:	xorg-util-util-macros >= 1.6
-%if %{with xcb}
 BuildRequires:	libxcb-devel >= 1.2
-%else
-BuildRequires:	xorg-lib-libXau-devel
-BuildRequires:	xorg-lib-libXdmcp-devel
-BuildRequires:	xorg-proto-bigreqsproto-devel
-BuildRequires:	xorg-proto-xcmiscproto-devel
-%endif
-%{?with_xcb:Requires:	libxcb >= 1.2}
+Requires:	libxcb >= 1.2
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,12 +50,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-proto-kbproto-devel
 Requires:	xorg-proto-xproto-devel >= 7.0.13
-%if %{with xcb}
 Requires:	libxcb-devel >= 1.2
-%else
-Requires:	xorg-lib-libXau-devel
-Requires:	xorg-lib-libXdmcp-devel
-%endif
 Obsoletes:	libX11-devel
 
 %description devel
@@ -106,8 +93,7 @@ Pakiet zawiera statyczną bibliotekę libX11.
 %{__autoheader}
 %{__automake}
 %configure \
-	%{!?with_static_libs:--disable-static} \
-	%{!?with_xcb:--without-xcb}
+	%{!?with_static_libs:--disable-static}
 
 %{__make}
 
@@ -119,6 +105,15 @@ rm -rf $RPM_BUILD_ROOT
 	pkgconfigdir=%{_pkgconfigdir}
 
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libX11
+
+cd specs
+for dir in XIM i18n/framework i18n/localedb i18n/trans libX11; do
+	install -d rpm-doc/$dir
+	cp -a $dir/*.html rpm-doc/$dir
+	cp -a $dir/*.svg rpm-doc/$dir || :
+	sed -i -e "s#$RPM_BUILD_ROOT##g" rpm-doc/$dir/*.html
+done
+	
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -139,10 +134,8 @@ fi
 %doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libX11.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libX11.so.6
-%if %{with xcb}
 %attr(755,root,root) %{_libdir}/libX11-xcb.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libX11-xcb.so.1
-%endif
 %dir %{_libdir}/X11
 %{_libdir}/X11/Xcms.txt
 %dir %{_datadir}/X11
@@ -221,26 +214,22 @@ fi
 %files devel
 %defattr(644,root,root,755)
 # PDF chosen - docs include pictures
-%{?with_doc:%doc specs/XIM/xim.pdf specs/i18n/{Framework,LocaleDB,Trans}.pdf specs/libX11/libX11.pdf}
+%{?with_doc:%doc specs/rpm-doc/*}
 %attr(755,root,root) %{_libdir}/libX11.so
 %{_libdir}/libX11.la
 %{_includedir}/X11/ImUtil.h
 %{_includedir}/X11/X*.h
 %{_includedir}/X11/cursorfont.h
 %{_pkgconfigdir}/x11.pc
-%if %{with xcb}
 %attr(755,root,root) %{_libdir}/libX11-xcb.so
 %{_libdir}/libX11-xcb.la
 #%{_includedir}/X11/Xlib-xcb.h (already included in X*.h above)
 %{_pkgconfigdir}/x11-xcb.pc
-%endif
 %{_mandir}/man3/*.3x*
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libX11.a
-%if %{with xcb}
 %{_libdir}/libX11-xcb.a
-%endif
 %endif
