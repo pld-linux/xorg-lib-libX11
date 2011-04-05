@@ -26,7 +26,7 @@ BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
-BuildRequires:	xorg-proto-xproto-devel >= 7.0.13
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.21
 BuildRequires:	xorg-sgml-doctools >= 1.5
 BuildRequires:	xorg-util-util-macros >= 1.11
 Requires:	libxcb >= 1.2
