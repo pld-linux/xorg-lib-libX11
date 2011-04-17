@@ -20,15 +20,15 @@ BuildRequires:	cpp
 BuildRequires:	libtool
 BuildRequires:	libxcb-devel >= 1.2
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	xmlto >= 0.0.20
+BuildRequires:	xmlto >= 0.0.22
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.21
-BuildRequires:	xorg-sgml-doctools >= 1.5
-BuildRequires:	xorg-util-util-macros >= 1.11
+BuildRequires:	xorg-sgml-doctools >= 1.7
+BuildRequires:	xorg-util-util-macros >= 1.12
 Requires:	libxcb >= 1.2
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,7 +45,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-proto-kbproto-devel
-Requires:	xorg-proto-xproto-devel >= 7.0.13
+Requires:	xorg-proto-xproto-devel >= 7.0.21
 Requires:	libxcb-devel >= 1.2
 Obsoletes:	libX11-devel
 
