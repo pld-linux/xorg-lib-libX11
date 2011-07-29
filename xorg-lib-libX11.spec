@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.4.3
+Version:	1.4.4
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	85e942627aaa020813e0eb8433353563
+# Source0-md5:	ed7c382cbf8c13425b6a66bcac0ca5d9
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
@@ -28,7 +28,7 @@ BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.21
 BuildRequires:	xorg-sgml-doctools >= 1.7
-BuildRequires:	xorg-util-util-macros >= 1.12
+BuildRequires:	xorg-util-util-macros >= 1.15
 Requires:	libxcb >= 1.2
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
