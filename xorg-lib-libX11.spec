@@ -25,9 +25,9 @@ BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
-BuildRequires:	xorg-proto-xf86bigfontproto-devel
+BuildRequires:	xorg-proto-xf86bigfontproto-devel >= 1.2.0
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.21
-BuildRequires:	xorg-sgml-doctools >= 1.7
+BuildRequires:	xorg-sgml-doctools >= 1.8
 BuildRequires:	xorg-util-util-macros >= 1.15
 Requires:	libxcb >= 1.2
 Obsoletes:	libX11
