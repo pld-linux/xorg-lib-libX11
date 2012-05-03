@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.4.4
-Release:	2
+Version:	1.4.99.901
+Release:	0.1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	ed7c382cbf8c13425b6a66bcac0ca5d9
+# Source0-md5:	520376557363da2df412beec9b4be749
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
@@ -80,7 +80,7 @@ Pakiet zawiera statyczną bibliotekę libX11.
 
 %prep
 %setup -q -n libX11-%{version}
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -154,7 +154,7 @@ fi
 %{_datadir}/X11/locale/iso8859-13
 %{_datadir}/X11/locale/iso8859-14
 %{_datadir}/X11/locale/iso8859-15
-%{_datadir}/X11/locale/iso8859-16
+#%{_datadir}/X11/locale/iso8859-16
 %{_datadir}/X11/locale/iso8859-2
 %{_datadir}/X11/locale/iso8859-3
 %{_datadir}/X11/locale/iso8859-4
@@ -166,7 +166,7 @@ fi
 %{_datadir}/X11/locale/iso8859-9e
 %{_datadir}/X11/locale/koi8-c
 %{_datadir}/X11/locale/koi8-r
-%{_datadir}/X11/locale/koi8-t
+#%{_datadir}/X11/locale/koi8-t
 %{_datadir}/X11/locale/koi8-u
 %{_datadir}/X11/locale/microsoft-cp1251
 %{_datadir}/X11/locale/microsoft-cp1255
