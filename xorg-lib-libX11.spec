@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.5.0
+Version:	1.5.99.902
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	78b4b3bab4acbdf0abcfca30a8c70cc6
+# Source0-md5:	0f1a38133d11d64ad02fecb508b049ed
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		http://xorg.freedesktop.org/
@@ -80,7 +80,9 @@ Pakiet zawiera statyczną bibliotekę libX11.
 
 %prep
 %setup -q -n libX11-%{version}
-%patch0 -p1
+# do we need this patch for anything? (aka is any pld user in need for these new locales)
+# https://bugs.freedesktop.org/show_bug.cgi?id=7415
+#%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -109,6 +111,9 @@ for dir in XIM i18n/framework i18n/localedb i18n/trans libX11; do
 	sed -i -e "s#$RPM_BUILD_ROOT##g" rpm-doc/$dir/*.html
 done
 
+# for xorg-app-x11perf and possibly others
+install -d $RPM_BUILD_ROOT%{_libdir}/X11
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -131,9 +136,9 @@ fi
 %attr(755,root,root) %{_libdir}/libX11-xcb.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libX11-xcb.so.1
 %dir %{_libdir}/X11
-%{_libdir}/X11/Xcms.txt
 %dir %{_datadir}/X11
 %{_datadir}/X11/XErrorDB
+%{_datadir}/X11/Xcms.txt
 %dir %{_datadir}/X11/locale
 %{_datadir}/X11/locale/compose.dir
 %{_datadir}/X11/locale/locale.alias
@@ -154,7 +159,7 @@ fi
 %{_datadir}/X11/locale/iso8859-13
 %{_datadir}/X11/locale/iso8859-14
 %{_datadir}/X11/locale/iso8859-15
-%{_datadir}/X11/locale/iso8859-16
+#%{_datadir}/X11/locale/iso8859-16
 %{_datadir}/X11/locale/iso8859-2
 %{_datadir}/X11/locale/iso8859-3
 %{_datadir}/X11/locale/iso8859-4
@@ -166,7 +171,7 @@ fi
 %{_datadir}/X11/locale/iso8859-9e
 %{_datadir}/X11/locale/koi8-c
 %{_datadir}/X11/locale/koi8-r
-%{_datadir}/X11/locale/koi8-t
+#%{_datadir}/X11/locale/koi8-t
 %{_datadir}/X11/locale/koi8-u
 %{_datadir}/X11/locale/microsoft-cp1251
 %{_datadir}/X11/locale/microsoft-cp1255
@@ -181,9 +186,9 @@ fi
 %lang(fi) %{_datadir}/X11/locale/fi_FI.UTF-8
 %lang(ja) %{_datadir}/X11/locale/ja
 %lang(ja) %{_datadir}/X11/locale/ja.JIS
-%lang(ja) %{_datadir}/X11/locale/ja.S90
+#%lang(ja) %{_datadir}/X11/locale/ja.S90
 %lang(ja) %{_datadir}/X11/locale/ja.SJIS
-%lang(ja) %{_datadir}/X11/locale/ja.U90
+#%lang(ja) %{_datadir}/X11/locale/ja.U90
 %lang(ja) %{_datadir}/X11/locale/ja_JP.UTF-8
 %lang(ko) %{_datadir}/X11/locale/ko
 %lang(ko) %{_datadir}/X11/locale/ko_KR.UTF-8
@@ -203,7 +208,7 @@ fi
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW.UTF-8
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW.big5
-%{_mandir}/man5/*Compose.5x*
+%{_mandir}/man5/*Compose.5*
 
 %files devel
 %defattr(644,root,root,755)
@@ -217,7 +222,7 @@ fi
 %{_includedir}/X11/cursorfont.h
 %{_pkgconfigdir}/x11.pc
 %{_pkgconfigdir}/x11-xcb.pc
-%{_mandir}/man3/*.3x*
+%{_mandir}/man3/*.3*
 
 %if %{with static_libs}
 %files static
