@@ -82,7 +82,7 @@ Pakiet zawiera statyczną bibliotekę libX11.
 %setup -q -n libX11-%{version}
 # do we need this patch for anything? (aka is any pld user in need for these new locales)
 # https://bugs.freedesktop.org/show_bug.cgi?id=7415
-#%patch0 -p1
+%patch0 -p1
 
 %build
 %{__libtoolize}
