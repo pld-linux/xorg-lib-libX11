@@ -20,6 +20,7 @@ BuildRequires:	cpp
 BuildRequires:	libtool
 BuildRequires:	libxcb-devel >= 1.2
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	sed >= 4.0
 BuildRequires:	xmlto >= 0.0.22
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-inputproto-devel
@@ -83,6 +84,10 @@ Pakiet zawiera statyczną bibliotekę libX11.
 # do we need this patch for anything? (aka is any pld user in need for these new locales)
 # https://bugs.freedesktop.org/show_bug.cgi?id=7415
 %patch0 -p1
+
+# support __libmansuffix__ and __filemansuffix__ with "x" suffix (per FHS 2.3)
+%{__sed} -i -e 's,\.so man__libmansuffix__/,.so man3/,' \
+	    -e 's,\.so man__filemansuffix__/,.so man5/,' man/*.man
 
 %build
 %{__libtoolize}
@@ -159,7 +164,7 @@ fi
 %{_datadir}/X11/locale/iso8859-13
 %{_datadir}/X11/locale/iso8859-14
 %{_datadir}/X11/locale/iso8859-15
-#%{_datadir}/X11/locale/iso8859-16
+%{_datadir}/X11/locale/iso8859-16
 %{_datadir}/X11/locale/iso8859-2
 %{_datadir}/X11/locale/iso8859-3
 %{_datadir}/X11/locale/iso8859-4
@@ -171,7 +176,7 @@ fi
 %{_datadir}/X11/locale/iso8859-9e
 %{_datadir}/X11/locale/koi8-c
 %{_datadir}/X11/locale/koi8-r
-#%{_datadir}/X11/locale/koi8-t
+%{_datadir}/X11/locale/koi8-t
 %{_datadir}/X11/locale/koi8-u
 %{_datadir}/X11/locale/microsoft-cp1251
 %{_datadir}/X11/locale/microsoft-cp1255
@@ -186,9 +191,7 @@ fi
 %lang(fi) %{_datadir}/X11/locale/fi_FI.UTF-8
 %lang(ja) %{_datadir}/X11/locale/ja
 %lang(ja) %{_datadir}/X11/locale/ja.JIS
-#%lang(ja) %{_datadir}/X11/locale/ja.S90
 %lang(ja) %{_datadir}/X11/locale/ja.SJIS
-#%lang(ja) %{_datadir}/X11/locale/ja.U90
 %lang(ja) %{_datadir}/X11/locale/ja_JP.UTF-8
 %lang(ko) %{_datadir}/X11/locale/ko
 %lang(ko) %{_datadir}/X11/locale/ko_KR.UTF-8
