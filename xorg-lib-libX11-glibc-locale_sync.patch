@@ -2028,8 +2028,8 @@
  zu_ZA.utf8:					zu_ZA.UTF-8
  
  XCOMM The following locale names are used in SCO 3.0
---- libX11-1.6.0/nls/locale.dir.pre.orig	2013-06-04 04:21:16.000000000 +0200
-+++ libX11-1.6.0/nls/locale.dir.pre	2013-06-04 21:58:07.172992896 +0200
+--- libX11-1.6.1/nls/locale.dir.pre.orig	2013-07-30 06:30:01.000000000 +0200
++++ libX11-1.6.1/nls/locale.dir.pre	2013-08-06 16:36:37.286639210 +0200
 @@ -6,8 +6,11 @@
  XCOMM
  
@@ -2286,11 +2286,8 @@
  en_US.UTF-8/XLC_LOCALE:			hu_HU.UTF-8
  en_US.UTF-8/XLC_LOCALE:			hy_AM.UTF-8
  en_US.UTF-8/XLC_LOCALE:			id_ID.UTF-8
-@@ -391,8 +414,12 @@
- en_US.UTF-8/XLC_LOCALE:                 ks_IN.UTF-8
- en_US.UTF-8/XLC_LOCALE:                 ks_IN@devanagari.UTF-8
- ko_KR.UTF-8/XLC_LOCALE:			ko_KR.UTF-8
-+en_US.UTF-8/XLC_LOCALE:			ku_TR.UTF-8
+@@ -394,6 +417,9 @@
+ en_US.UTF-8/XLC_LOCALE:			ku_TR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			kw_GB.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ky_KG.UTF-8
 +en_US.UTF-8/XLC_LOCALE:			lg_UG.UTF-8
@@ -2299,7 +2296,7 @@
  en_US.UTF-8/XLC_LOCALE:			lo_LA.UTF-8
  en_US.UTF-8/XLC_LOCALE:			lt_LT.UTF-8
  en_US.UTF-8/XLC_LOCALE:			lv_LV.UTF-8
-@@ -400,26 +427,27 @@
+@@ -401,26 +427,27 @@
  en_US.UTF-8/XLC_LOCALE:			mi_NZ.UTF-8
  en_US.UTF-8/XLC_LOCALE:			mk_MK.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ml_IN.UTF-8
@@ -2331,7 +2328,7 @@
  pt_BR.UTF-8/XLC_LOCALE:			pt_BR.UTF-8
  en_US.UTF-8/XLC_LOCALE:			pt_PT.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ro_RO.UTF-8
-@@ -431,15 +459,17 @@
+@@ -432,15 +459,17 @@
  en_US.UTF-8/XLC_LOCALE:                 sd_IN@devanagari.UTF-8
  en_US.UTF-8/XLC_LOCALE:			se_NO.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sh_BA.UTF-8
@@ -2352,7 +2349,7 @@
  en_US.UTF-8/XLC_LOCALE:			ss_ZA.UTF-8
  en_US.UTF-8/XLC_LOCALE:			st_ZA.UTF-8
  en_US.UTF-8/XLC_LOCALE:			sv_FI.UTF-8
-@@ -450,8 +480,11 @@
+@@ -451,8 +480,11 @@
  th_TH.UTF-8/XLC_LOCALE:			th_TH.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ER.UTF-8
  en_US.UTF-8/XLC_LOCALE:			ti_ET.UTF-8
