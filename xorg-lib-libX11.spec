@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
-#
+
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
 Version:	1.6.3
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
@@ -30,6 +30,7 @@ BuildRequires:	xorg-proto-xf86bigfontproto-devel >= 1.2.0
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.21
 BuildRequires:	xorg-sgml-doctools >= 1.10
 BuildRequires:	xorg-util-util-macros >= 1.15
+Requires:	%{name}-data = %{version}-%{release}
 Requires:	libxcb >= 1.2
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,14 +41,26 @@ Core X11 protocol client library.
 %description -l pl.UTF-8
 Podstawowa biblioteka kliencka protokołu X11.
 
+%package data
+Summary:	Data files for libX11 library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
+Group:		Base
+Conflicts:	xorg-lib-libX11 < 1.6.3-2
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
+
+%description data
+Data files for libX11 library.
+
 %package devel
 Summary:	Header files for libX11 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libxcb-devel >= 1.2
 Requires:	xorg-proto-kbproto-devel
 Requires:	xorg-proto-xproto-devel >= 7.0.21
-Requires:	libxcb-devel >= 1.2
 Obsoletes:	libX11-devel
 
 %description devel
@@ -138,12 +151,15 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libX11.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libX11.so.6
 %attr(755,root,root) %{_libdir}/libX11-xcb.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libX11-xcb.so.1
 %dir %{_libdir}/X11
+
+%files data
+%defattr(644,root,root,755)
+%doc AUTHORS COPYING ChangeLog README
 %dir %{_datadir}/X11
 %{_datadir}/X11/XErrorDB
 %{_datadir}/X11/Xcms.txt
