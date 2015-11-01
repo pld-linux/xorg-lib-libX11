@@ -17,8 +17,10 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
+BuildRequires:	docbook-dtd43-xml
 BuildRequires:	libtool
 BuildRequires:	libxcb-devel >= 1.2
+BuildRequires:	perl-Encode
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
 BuildRequires:	xmlto >= 0.0.22
