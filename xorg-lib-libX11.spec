@@ -5,21 +5,21 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.6.3
-Release:	2
+Version:	1.6.4
+Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	2e36b73f8a42143142dda8129f02e4e0
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
+# Source0-md5:	6d54227082f3aa2c596f0b3a3fbb9175
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
-URL:		http://xorg.freedesktop.org/
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	cpp
 BuildRequires:	docbook-dtd43-xml
 BuildRequires:	libtool
-BuildRequires:	libxcb-devel >= 1.2
+BuildRequires:	libxcb-devel >= 1.11.1
 BuildRequires:	perl-Encode
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
@@ -33,7 +33,7 @@ BuildRequires:	xorg-proto-xproto-devel >= 7.0.21
 BuildRequires:	xorg-sgml-doctools >= 1.10
 BuildRequires:	xorg-util-util-macros >= 1.15
 Requires:	%{name}-data = %{version}-%{release}
-Requires:	libxcb >= 1.2
+Requires:	libxcb >= 1.11.1
 Obsoletes:	libX11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,7 +60,7 @@ Summary:	Header files for libX11 library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libxcb-devel >= 1.2
+Requires:	libxcb-devel >= 1.11.1
 Requires:	xorg-proto-kbproto-devel
 Requires:	xorg-proto-xproto-devel >= 7.0.21
 Obsoletes:	libX11-devel
@@ -219,6 +219,7 @@ fi
 %lang(ko) %{_datadir}/X11/locale/ko
 %lang(ko) %{_datadir}/X11/locale/ko_KR.UTF-8
 %lang(pt_BR) %{_datadir}/X11/locale/pt_BR.UTF-8
+%lang(pt) %{_datadir}/X11/locale/pt_PT.UTF-8
 %lang(ru) %{_datadir}/X11/locale/ru_RU.UTF-8
 %lang(th) %{_datadir}/X11/locale/th_TH
 %lang(th) %{_datadir}/X11/locale/th_TH.UTF-8
@@ -234,7 +235,8 @@ fi
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW.UTF-8
 %lang(zh_TW) %{_datadir}/X11/locale/zh_TW.big5
-%{_mandir}/man5/*Compose.5*
+%{_mandir}/man5/Compose.5*
+%{_mandir}/man5/XCompose.5*
 
 %files devel
 %defattr(644,root,root,755)
@@ -244,11 +246,51 @@ fi
 %{_libdir}/libX11.la
 %{_libdir}/libX11-xcb.la
 %{_includedir}/X11/ImUtil.h
-%{_includedir}/X11/X*.h
+%{_includedir}/X11/XKBlib.h
+%{_includedir}/X11/Xcms.h
+%{_includedir}/X11/Xlib.h
+%{_includedir}/X11/Xlib-xcb.h
+%{_includedir}/X11/XlibConf.h
+%{_includedir}/X11/Xlibint.h
+%{_includedir}/X11/Xlocale.h
+%{_includedir}/X11/Xregion.h
+%{_includedir}/X11/Xresource.h
+%{_includedir}/X11/Xutil.h
 %{_includedir}/X11/cursorfont.h
 %{_pkgconfigdir}/x11.pc
 %{_pkgconfigdir}/x11-xcb.pc
-%{_mandir}/man3/*.3*
+%{_mandir}/man3/AllPlanes.3*
+%{_mandir}/man3/Bitmap*.3*
+%{_mandir}/man3/BlackPixel*.3*
+%{_mandir}/man3/CellsOfScreen.3*
+%{_mandir}/man3/ClientWhitePointOfCCC.3*
+%{_mandir}/man3/ConnectionNumber.3*
+%{_mandir}/man3/Default*.3*
+%{_mandir}/man3/Display*.3*
+%{_mandir}/man3/DoesBackingStore.3*
+%{_mandir}/man3/DoesSaveUnders.3*
+%{_mandir}/man3/EventMaskOfScreen.3*
+%{_mandir}/man3/HeightMMOfScreen.3*
+%{_mandir}/man3/HeightOfScreen.3*
+%{_mandir}/man3/ImageByteOrder.3*
+%{_mandir}/man3/Is*Key.3*
+%{_mandir}/man3/LastKnownRequestProcessed.3*
+%{_mandir}/man3/MaxCmapsOfScreen.3*
+%{_mandir}/man3/MinCmapsOfScreen.3*
+%{_mandir}/man3/NextRequest.3*
+%{_mandir}/man3/PlanesOfScreen.3*
+%{_mandir}/man3/ProtocolRevision.3*
+%{_mandir}/man3/ProtocolVersion.3*
+%{_mandir}/man3/QLength.3*
+%{_mandir}/man3/RootWindow*.3*
+%{_mandir}/man3/Screen*.3*
+%{_mandir}/man3/ServerVendor.3*
+%{_mandir}/man3/VendorRelease.3*
+%{_mandir}/man3/VisualOfCCC.3*
+%{_mandir}/man3/WhitePixel*.3*
+%{_mandir}/man3/WidthMMOfScreen.3*
+%{_mandir}/man3/WidthOfScreen.3*
+%{_mandir}/man3/X*.3*
 
 %if %{with static_libs}
 %files static
