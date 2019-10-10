@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.6.8
+Version:	1.6.9
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	c5fa5a86a20e3591bed6c046498d4b8f
+# Source0-md5:	55adbfb6d4370ecac5e70598c4e7eed2
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		https://xorg.freedesktop.org/
@@ -61,7 +61,8 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libxcb-devel >= 1.11.1
-Requires:	xorg-proto-kbproto-devel
+# after <X11/extensions/XKBgeom.h> removal
+Requires:	xorg-proto-kbproto-devel >= 1.0.7-2019.1.3
 Requires:	xorg-proto-xproto-devel >= 7.0.21
 Obsoletes:	libX11-devel
 
@@ -257,6 +258,7 @@ fi
 %{_includedir}/X11/Xresource.h
 %{_includedir}/X11/Xutil.h
 %{_includedir}/X11/cursorfont.h
+%{_includedir}/X11/extensions/XKBgeom.h
 %{_pkgconfigdir}/x11.pc
 %{_pkgconfigdir}/x11-xcb.pc
 %{_mandir}/man3/AllPlanes.3*
