@@ -45,15 +45,18 @@ Podstawowa biblioteka kliencka protokołu X11.
 
 %package data
 Summary:	Data files for libX11 library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libX11
-Group:		Base
+Summary(pl.UTF-8):	Pliki danych biblioteki libX11
+Group:		X11/Libraries
 Conflicts:	xorg-lib-libX11 < 1.6.3-2
-%if "%{_rpmversion}" >= "5"
+%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
 %endif
 
 %description data
 Data files for libX11 library.
+
+%description data -l pl.UTF-8
+Pliki danych biblioteki libX11.
 
 %package devel
 Summary:	Header files for libX11 library
