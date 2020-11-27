@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.6.12
+Version:	1.7.0
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	046aae3133f35bc12a183e4e107cb690
+# Source0-md5:	f46572566e2cec801609d25f735285b7
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		https://xorg.freedesktop.org/
@@ -29,7 +29,7 @@ BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel >= 1.2.0
-BuildRequires:	xorg-proto-xproto-devel >= 7.0.21
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.25
 BuildRequires:	xorg-sgml-doctools >= 1.10
 BuildRequires:	xorg-util-util-macros >= 1.15
 Requires:	%{name}-data = %{version}-%{release}
@@ -66,7 +66,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	libxcb-devel >= 1.11.1
 # after <X11/extensions/XKBgeom.h> removal
 Requires:	xorg-proto-kbproto-devel >= 1.0.7-2019.1.3
-Requires:	xorg-proto-xproto-devel >= 7.0.21
+Requires:	xorg-proto-xproto-devel >= 7.0.25
 Obsoletes:	libX11-devel
 
 %description devel
@@ -137,9 +137,6 @@ done
 
 # for xorg-app-x11perf and possibly others
 install -d $RPM_BUILD_ROOT%{_libdir}/X11
-
-# obsolete locale (rename to sr_RS / sr_ME?)
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/X11/locale/sr_CS.UTF-8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -225,6 +222,7 @@ fi
 %lang(pt_BR) %{_datadir}/X11/locale/pt_BR.UTF-8
 %lang(pt) %{_datadir}/X11/locale/pt_PT.UTF-8
 %lang(ru) %{_datadir}/X11/locale/ru_RU.UTF-8
+%lang(sr) %{_datadir}/X11/locale/sr_RS.UTF-8
 %lang(th) %{_datadir}/X11/locale/th_TH
 %lang(th) %{_datadir}/X11/locale/th_TH.UTF-8
 %lang(vi) %{_datadir}/X11/locale/vi_VN.tcvn
