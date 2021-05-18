@@ -639,7 +639,7 @@
 - koi8-u       ko_KR.UTF-8 microsoft-cp1251         microsoft-cp1255 \
 + koi8-t       koi8-u      ko_KR.UTF-8 microsoft-cp1251          microsoft-cp1255 \
   microsoft-cp1256         mulelao-1   nokhchi-1    pt_BR.UTF-8  pt_PT.UTF-8 \
-  ru_RU.UTF-8  sr_CS.UTF-8 tatar-cyr   th_TH        th_TH.UTF-8  tscii-0 \
+  ru_RU.UTF-8  sr_RS.UTF-8 tatar-cyr   th_TH        th_TH.UTF-8  tscii-0 \
   vi_VN.tcvn   vi_VN.viscii            zh_CN        zh_CN.gb18030 \
 --- libX11-1.7.0/nls/compose.dir.pre.orig	2020-11-20 20:08:11.000000000 +0100
 +++ libX11-1.7.0/nls/compose.dir.pre	2020-11-27 17:28:48.609915129 +0100
@@ -957,8 +957,8 @@
 --- libX11-1.7.0/nls/locale.alias.pre.orig	2020-11-20 20:08:11.000000000 +0100
 +++ libX11-1.7.0/nls/locale.alias.pre	2020-11-27 17:53:24.555252581 +0100
 @@ -17,11 +17,21 @@
- English_United-States.437:			C
  C.UTF-8:					en_US.UTF-8
+ C.utf8:						en_US.UTF-8
  XCOMM a3 is not an ISO 639 language code, but in Cyrillic, "Z" looks like "3".
 -a3:						az_AZ.KOI8-C
 -a3_AZ:						az_AZ.KOI8-C
