@@ -22,6 +22,7 @@ BuildRequires:	libtool
 BuildRequires:	libxcb-devel >= 1.11.1
 BuildRequires:	perl-Encode
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto >= 0.0.22
