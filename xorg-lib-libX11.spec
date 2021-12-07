@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.7.2
+Version:	1.7.3
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.bz2
-# Source0-md5:	a9a24be62503d5e34df6b28204956a7b
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.xz
+# Source0-md5:	dfe451821036c28593bb1873ca3045ba
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		https://xorg.freedesktop.org/
@@ -23,6 +23,7 @@ BuildRequires:	libxcb-devel >= 1.11.1
 BuildRequires:	perl-Encode
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto >= 0.0.22
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-inputproto-devel
@@ -32,6 +33,7 @@ BuildRequires:	xorg-proto-xf86bigfontproto-devel >= 1.2.0
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.25
 BuildRequires:	xorg-sgml-doctools >= 1.10
 BuildRequires:	xorg-util-util-macros >= 1.15
+BuildRequires:	xz
 Requires:	%{name}-data = %{version}-%{release}
 Requires:	libxcb >= 1.11.1
 Obsoletes:	libX11
