@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.7.3.1
+Version:	1.7.4
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.xz
-# Source0-md5:	28021759f3cf9ef64eb1465c3b6effc5
+# Source0-md5:	1f330d26c7236cd3db54ea65a174ffd8
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		https://xorg.freedesktop.org/
@@ -37,7 +37,7 @@ BuildRequires:	xorg-util-util-macros >= 1.15
 BuildRequires:	xz
 Requires:	%{name}-data = %{version}-%{release}
 Requires:	libxcb >= 1.11.1
-Obsoletes:	libX11
+Obsoletes:	libX11 < 6.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -68,7 +68,7 @@ Requires:	libxcb-devel >= 1.11.1
 # after <X11/extensions/XKBgeom.h> removal
 Requires:	xorg-proto-kbproto-devel >= 1.0.7-2019.1.3
 Requires:	xorg-proto-xproto-devel >= 7.0.25
-Obsoletes:	libX11-devel
+Obsoletes:	libX11-devel < 6.3
 
 %description devel
 Core X11 protocol client library.
@@ -87,7 +87,7 @@ Summary:	Static libX11 library
 Summary(pl.UTF-8):	Biblioteka statyczna libX11
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Obsoletes:	libX11-static
+Obsoletes:	libX11-static < 6.3
 
 %description static
 Core X11 protocol client library.
