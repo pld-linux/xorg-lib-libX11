@@ -924,8 +924,8 @@
 +en_US.UTF-8/Compose:		so_KE.UTF-8
 +en_US.UTF-8/Compose:		so_SO.UTF-8
  en_US.UTF-8/Compose:		sq_AL.UTF-8
- en_US.UTF-8/Compose:		sr_ME.UTF-8
- en_US.UTF-8/Compose:		sr_RS.UTF-8
+ sr_RS.UTF-8/Compose:		sr_ME.UTF-8
+ sr_RS.UTF-8/Compose:		sr_RS.UTF-8
 @@ -442,8 +483,11 @@ en_US.UTF-8/Compose:		tg_TJ.UTF-8
  th_TH.UTF-8/Compose:		th_TH.UTF-8
  en_US.UTF-8/Compose:		ti_ER.UTF-8
