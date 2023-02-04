@@ -5,15 +5,14 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.8.3
-Release:	2
+Version:	1.8.4
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.xz
-# Source0-md5:	f4855944f068d8a623c82c4162747fa3
+# Source0-md5:	e932752126240f0846b35eef6b1f2c3d
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
-Patch1:		revert-update-xputbackevent.patch
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -105,7 +104,6 @@ Pakiet zawiera statyczną bibliotekę libX11.
 # do we need this patch for anything? (aka is any pld user in need for these new locales)
 # https://bugs.freedesktop.org/show_bug.cgi?id=7415
 %patch0 -p1
-%patch1 -p1
 
 # support __libmansuffix__ and __filemansuffix__ with "x" suffix (per FHS 2.3)
 %{__sed} -i -e 's,\.so man__libmansuffix__/,.so man3/,' \
