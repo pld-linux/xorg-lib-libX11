@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.8.8
+Version:	1.8.9
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libX11-%{version}.tar.xz
-# Source0-md5:	b3ead07f3706fc530c8c584bbe86506b
+# Source0-md5:	b006876e5b749d82801fe9450d700daf
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		https://xorg.freedesktop.org/
@@ -129,7 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libX11
 
 cd specs
-for dir in XIM i18n/framework i18n/localedb i18n/trans libX11; do
+for dir in XIM XKB i18n/compose i18n/framework i18n/localedb i18n/trans libX11; do
 	install -d rpm-doc/$dir
 	cp -a $dir/*.html rpm-doc/$dir
 	cp -a $dir/*.svg rpm-doc/$dir || :
