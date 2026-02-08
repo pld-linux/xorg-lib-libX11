@@ -5,12 +5,12 @@
 Summary:	Core X11 protocol client library
 Summary(pl.UTF-8):	Podstawowa biblioteka kliencka protokołu X11
 Name:		xorg-lib-libX11
-Version:	1.8.12
+Version:	1.8.13
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	https://xorg.freedesktop.org/archive/individual/lib/libX11-%{version}.tar.xz
-# Source0-md5:	146d770e564812e00f97e0cbdce632b7
+# Source0-md5:	b617a053d2003cc81309f4e13d01379c
 # sync locales and their encodings with glibc
 Patch0:		%{name}-glibc-locale_sync.patch
 URL:		https://xorg.freedesktop.org/
@@ -18,7 +18,7 @@ BuildRequires:	autoconf >= 2.70
 BuildRequires:	automake
 BuildRequires:	cpp
 BuildRequires:	docbook-dtd43-xml
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	libxcb-devel >= 1.11.1
 BuildRequires:	perl-Encode
 BuildRequires:	pkgconfig >= 1:0.19
@@ -155,10 +155,10 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libX11.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libX11.so.6
-%attr(755,root,root) %{_libdir}/libX11-xcb.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libX11-xcb.so.1
+%{_libdir}/libX11.so.*.*.*
+%ghost %{_libdir}/libX11.so.6
+%{_libdir}/libX11-xcb.so.*.*.*
+%ghost %{_libdir}/libX11-xcb.so.1
 %dir %{_libdir}/X11
 
 %files data
@@ -244,8 +244,8 @@ fi
 %files devel
 %defattr(644,root,root,755)
 %doc specs/rpm-doc/*
-%attr(755,root,root) %{_libdir}/libX11.so
-%attr(755,root,root) %{_libdir}/libX11-xcb.so
+%{_libdir}/libX11.so
+%{_libdir}/libX11-xcb.so
 %{_libdir}/libX11.la
 %{_libdir}/libX11-xcb.la
 %{_includedir}/X11/ImUtil.h
