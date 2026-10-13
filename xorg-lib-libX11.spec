@@ -1,5 +1,6 @@
 #
 # Conditional build:
+%bcond_without	doc		# documentation
 %bcond_without	static_libs	# static libraries
 
 Summary:	Core X11 protocol client library
@@ -17,7 +18,7 @@ URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.70
 BuildRequires:	automake
 BuildRequires:	cpp
-BuildRequires:	docbook-dtd43-xml
+%{?with_doc:BuildRequires:	docbook-dtd43-xml}
 BuildRequires:	libtool >= 2:2
 BuildRequires:	libxcb-devel >= 1.11.1
 BuildRequires:	perl-Encode
@@ -25,14 +26,14 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	xmlto >= 0.0.22
+%{?with_doc:BuildRequires:	xmlto >= 0.0.22}
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-inputproto-devel
 BuildRequires:	xorg-proto-kbproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
 BuildRequires:	xorg-proto-xf86bigfontproto-devel >= 1.2.0
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.25
-BuildRequires:	xorg-sgml-doctools >= 1.10
+%{?with_doc:BuildRequires:	xorg-sgml-doctools >= 1.10}
 BuildRequires:	xorg-util-util-macros >= 1.15
 BuildRequires:	xz
 Requires:	%{name}-data = %{version}-%{release}
@@ -128,6 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libX11
 
+%if %{with doc}
 cd specs
 for dir in XIM XKB i18n/compose i18n/framework i18n/localedb i18n/trans libX11; do
 	install -d rpm-doc/$dir
@@ -135,6 +137,7 @@ for dir in XIM XKB i18n/compose i18n/framework i18n/localedb i18n/trans libX11; 
 	cp -a $dir/*.svg rpm-doc/$dir || :
 	sed -i -e "s#$RPM_BUILD_ROOT##g" rpm-doc/$dir/*.html
 done
+%endif
 
 # for xorg-app-x11perf and possibly others
 install -d $RPM_BUILD_ROOT%{_libdir}/X11
@@ -235,7 +238,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc specs/rpm-doc/*
+%{?with_doc:%doc specs/rpm-doc/*}
 %{_libdir}/libX11.so
 %{_libdir}/libX11-xcb.so
 %{_libdir}/libX11.la
