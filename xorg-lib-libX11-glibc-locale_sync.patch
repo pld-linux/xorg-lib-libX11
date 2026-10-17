@@ -825,13 +825,14 @@
  en_US.UTF-8/Compose:		ar_AA.UTF-8
  en_US.UTF-8/Compose:		ar_AE.UTF-8
  en_US.UTF-8/Compose:		ar_BH.UTF-8
-@@ -290,11 +318,13 @@ en_US.UTF-8/Compose:		bn_IN.UTF-8
+@@ -290,12 +318,14 @@ en_US.UTF-8/Compose:		bn_IN.UTF-8
  en_US.UTF-8/Compose:		bo_IN.UTF-8
  en_US.UTF-8/Compose:		br_FR.UTF-8
  en_US.UTF-8/Compose:		bs_BA.UTF-8
 +en_US.UTF-8/Compose:		byn_ER.UTF-8
  en_US.UTF-8/Compose:		ca_AD.UTF-8
  en_US.UTF-8/Compose:		ca_ES.UTF-8
+ en_US.UTF-8/Compose:		ca_ES.UTF-8@valencia
  en_US.UTF-8/Compose:		ca_FR.UTF-8
  en_US.UTF-8/Compose:		ca_IT.UTF-8
  cs_CZ.UTF-8/Compose:		cs_CZ.UTF-8
@@ -1022,7 +1023,7 @@
  br_FR.UTF-8@euro:				br_FR.UTF-8
  bs:						bs_BA.ISO8859-2
  bs_BA:						bs_BA.ISO8859-2
-@@ -165,10 +189,11 @@ ca_ES@euro:					ca_ES.ISO8859-15
+@@ -165,11 +189,12 @@ ca_ES@euro:					ca_ES.ISO8859-15
  ca_ES.iso88591:					ca_ES.ISO8859-1
  ca_ES.ISO-8859-1:				ca_ES.ISO8859-1
  ca_ES.iso885915:				ca_ES.ISO8859-15
@@ -1031,6 +1032,7 @@
  ca_ES.ISO-8859-15:				ca_ES.ISO8859-15
  ca_ES.ISO-8859-15@euro:				ca_ES.ISO8859-15
  ca_ES.UTF-8@euro:				ca_ES.UTF-8
+ ca_ES.UTF-8@valencia:				ca_ES.UTF-8
 +ca_ES.utf8:					ca_ES.UTF-8
  ca_FR:						ca_FR.ISO8859-1
  ca_FR@euro:					ca_FR.ISO8859-15
